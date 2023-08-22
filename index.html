@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asstes/css/style.css">
+    <title>Form</title>
+    
+</head>
+<body>
+    <!-- ! Wir benötigen das <form> Tag wenn ein html Formular erstellt wird. 
+    ! Er Definiert den Beginn und Ende eines Formulars -->
+    <!-- ? Das action-Attribut verweist auf eine URL, 
+        ? an die die eingegebenen Formular-Daten beim Klicken auf den submit-Button gesendet werden. -->
+    <form action=""> <!-- - gibt die URL an, an die die Formulardaten gesendet werden -->
+
+        <!-- ! Server-seitige Verarbeitung: Wenn die Eingabedaten auf einem Server verarbeitet werden sollen, 
+        !sollte die URL zu einem Server-Endpunkt oder einer Skriptdatei angegeben werden.  -->
+
+        <!-- ! Diese Datei verarbeitet die empfangenen Daten, speichert sie und sendet bei Bedarf eine Antwort -->    
+
+
+        <fieldset> <!-- ? wird verwendet, um eine logische Gruppierung von Formularelementen zu erstellen.  -->
+        
+            <legend>Label & Input</legend>
+            <!-- ? legend dient dazu, die Funktion oder den Zweck der darin enthaltenen Formularelemente zu beschreiben -->
+
+            <!-- ---------- INPUT ---------- -->
+
+            <section class="text">
+                <label for="text">Gib hier einen Text ein:</label>
+                <input type="text" id="text" placeholder="Gib hier deinen Text ein">
+            </section>
+            <!-- * Attributen: placeholder / disabled / required -->
+
+            <section class="nummer">
+                <label for="nummer">Gib eine Nummer ein:</label>
+                <input type="number" id="nummer" placeholder="Meine Nummer">
+            </section>
+
+            <section class="telefon">
+                <label for="telefon">Gib deine Nummer ein:</label>
+                <input type="tel" id="telefon" placeholder="Meine Telefonnummer">
+            </section>
+
+          <!-- ! Das Attribut "disabled" ist ein boolesches Attribut. -->
+            <!-- ? Wenn es vorhanden ist, gibt es an, dass das Element deaktiviert werden soll. Ein deaktiviertes Element ist unbrauchbar. -->
+            <!-- ? Das disabled-Attribut kann so gesetzt werden, dass ein Benutzer das Element erst dann benutzen kann, 
+            <!-- ? wenn eine andere Bedingung erfüllt ist (z. B. das Markieren eines Kontrollkästchens usw.).  -->
+            <!-- ? Dann könnte ein JavaScript den deaktivierten Wert entfernen und das Element wieder nutzbar machen.  -->
+            <section class="mail">
+                <label for="mail">Meine Mail:</label>
+                <input type="email" id="mail" required placeholder="Email Adresse">
+            </section>
+
+            <section class="login">
+                <label for="passwort">Passwort:</label>
+                <input type="password" id="passwort" disabled placeholder="Min 8 Zeichen">
+            </section>
+
+             <!-- ---------- RADIO ---------- -->
+             <hr>
+            <section>
+                <div>
+                    <input type="radio" name="auswahl" id="radioJa" checked />
+                    <label for="radioJa">Ja</label>
+                </div>
+                <div>
+                    <input type="radio" id="radioNein" name="auswahl" />
+                    <label for="radioNein">Nein</label>
+                </div> 
+
+                <div>
+                    <input type="radio" id="radioVielleicht" name="auswahl" />
+                    <label for="radioVielleicht">Vielleicht</label>
+                </div>
+            </section>
+
+            <!-- ---------- CHECKBOX & SELECT ---------- -->
+            <section >
+                <h2>Ich packe meinen Koffer ...</h2>
+                <div>
+                    <input type="checkbox"  id="checkboxHose">
+                    <label for="checkboxHose">Hose</label>
+                </div>
+                <div>
+                    <input type="checkbox"  id="checkboxShirt">
+                    <label for="checkboxShirt">Shirt</label>
+                </div>
+                <div>
+                    <input type="checkbox"  id="checkboxSchuhe">
+                    <label for="checkboxSchuhe">Schuhe</label>
+                </div>
+                <div>
+                    <input type="checkbox"  id="checkboxEssen">
+                    <label for="checkboxEssen">Essen</label>
+                </div>
+                <div>
+                    <input type="checkbox" disabled id="checkboxTrinken">
+                    <label for="checkboxTrinken">Trinken</label>
+                </div>
+                <section>
+                    <h2> Meine Reiseziele:</h2>
+                   <div>
+                       <select name="" id="" >
+                           <option value="">Wähle aus ..</option>
+                           <option value="HR">Kroatien</option>
+                           <option value="LK">Sri Lanka</option>
+                           <option value="MG">Madagaskar</option>
+                           <option value="MX">Mexiko</option>
+                           <option value="BR">Brasilien</option>
+                       </select>
+                   </div>
+                </section>
+            </section>
+
+             <!-- ---------- DATE ---------- -->
+
+             <section>
+                <div>
+                    <label for="date">Datum:</label>
+                    <input type="date" id="date">
+                </div>
+             </section>
+
+             <hr>
+             <!-- ---------- RANGE ---------- -->
+
+             <section >
+                <div style="display: flex; flex-direction: column; ">
+                    <label for="feelings">Auf einer Skala von 1 - 10</label>
+                    <input type="range" id="feelings" min="1" max="10">
+                    
+                    <!-- input onchange="feeling()" type="range" id="feelings" min="1" max="10">
+                    <div class="output"></div> -->
+                </div>
+             </section>
+             <hr>
+
+             <!-- ---------- TEXTAREA & FILE ---------- -->
+
+             <section>
+                <div style="display: flex; flex-direction: row;">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Meine Geschichte ..."></textarea>
+                    <input type="file" id="file">
+                </div>
+             </section>
+
+             <!-- ---------- SUBMIT / BUTTON ---------- -->
+             <hr>
+
+             <section style="display: flex; justify-content: space-around;">
+                <div>
+                
+                    <input type="button" value="Button">
+                <!-- ? wird verwendet, um JavaScript-Funktionen oder Aktionen auf der Webseite auszulösen  -->
+                </div>
+                <div>
+            
+                    <input type="submit" value="Submit">
+                <!-- ? wird häufig in HTML-Formularen verwendet. -->
+                <!-- * Wennangeklickt -> sendet Formulardaten zur weiteren Verarbeitung an den Server -->
+        
+                </div>
+             </section>
+             
+        </fieldset>
+
+    </form>
+    <script src="./asstes/main.js"></script>
+    
+</body>
+</html>
